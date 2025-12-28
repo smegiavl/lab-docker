@@ -1,0 +1,9 @@
+FROM python:3.11
+
+WORKDIR /app
+
+RUN pip install --no-cache-dir ipython numpy numba nbformat nbconvert
+
+COPY reduc-operation-array-par-alumno15.ipynb /app/
+
+CMD ["ipython", "/app/reduc-operation-array-par-alumno15.ipynb", "100000"]
